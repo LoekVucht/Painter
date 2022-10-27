@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "CIhnvmgrjrxg94OHEs6j4ZHJlOTUhP7CeFPSr3wU6tMP5siwGdc3Cmz0ll2ll0lGs/gpB31+EcImZUK+bRU6jw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Hp\\source\\repos\\Painter\\Painter\\Painter.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Hp\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\monogame.content.builder.task.3.8.1.303.nupkg.sha512",
+    "C:\\Users\\Hp\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.1.303\\monogame.framework.desktopgl.3.8.1.303.nupkg.sha512"
+  ],
+  "logs": []
+}
