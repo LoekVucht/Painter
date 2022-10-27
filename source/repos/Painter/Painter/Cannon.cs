@@ -69,6 +69,16 @@ namespace Painter
             Angle = (float)Math.Atan2(opposite, adjacent);
         }
 
+        public Vector2 BallPosition
+        {
+            get
+            {
+                float opposite = (float)Math.Sin(Angle) * _cannonBarrel.Width * 0.75f;
+                float adjacent = (float)Math.Cos(Angle) * _cannonBarrel.Width * 0.75f;
+                return _barrelPosition + new Vector2(adjacent, opposite);
+            }
+        }
+
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(_cannonBarrel, _barrelPosition, null, Color.White, Angle, _barrelOrigin, 1.0f, SpriteEffects.None, 0);

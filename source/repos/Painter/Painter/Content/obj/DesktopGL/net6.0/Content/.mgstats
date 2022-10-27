@@ -1,4 +1,1 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/Hp/source/repos/Painter/source/repos/Painter/Painter/Content/spr_ball_blue.png","C:/Users/Hp/source/repos/Painter/source/repos/Painter/Painter/Content/bin/DesktopGL/Content/spr_ball_blue.xnb","TextureProcessor","Texture2DContent",1782,2021,0,210483
-"C:/Users/Hp/source/repos/Painter/source/repos/Painter/Painter/Content/spr_ball_green.png","C:/Users/Hp/source/repos/Painter/source/repos/Painter/Painter/Content/bin/DesktopGL/Content/spr_ball_green.xnb","TextureProcessor","Texture2DContent",1817,2021,0,0040148
-"C:/Users/Hp/source/repos/Painter/source/repos/Painter/Painter/Content/spr_ball_red.png","C:/Users/Hp/source/repos/Painter/source/repos/Painter/Painter/Content/bin/DesktopGL/Content/spr_ball_red.xnb","TextureProcessor","Texture2DContent",1840,2021,0,0032751

@@ -63,3 +63,6 @@ C:\Users\Hp\source\repos\Painter\source\repos\Painter\Painter\obj\Debug\net6.0\r
 C:\Users\Hp\source\repos\Painter\source\repos\Painter\Painter\bin\Debug\net6.0\Content\spr_ball_blue.xnb
 C:\Users\Hp\source\repos\Painter\source\repos\Painter\Painter\bin\Debug\net6.0\Content\spr_ball_green.xnb
 C:\Users\Hp\source\repos\Painter\source\repos\Painter\Painter\bin\Debug\net6.0\Content\spr_ball_red.xnb
+C:\Users\Hp\source\repos\Painter\source\repos\Painter\Painter\bin\Debug\net6.0\Content\spr_can_blue.xnb
+C:\Users\Hp\source\repos\Painter\source\repos\Painter\Painter\bin\Debug\net6.0\Content\spr_can_green.xnb
+C:\Users\Hp\source\repos\Painter\source\repos\Painter\Painter\bin\Debug\net6.0\Content\spr_can_red.xnb
