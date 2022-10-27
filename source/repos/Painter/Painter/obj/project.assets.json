@@ -107,11 +107,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hp\\source\\repos\\Painter\\Painter\\Painter.csproj",
+      "projectUniqueName": "C:\\Users\\Hp\\source\\repos\\Painter\\source\\repos\\Painter\\Painter\\Painter.csproj",
       "projectName": "Painter",
-      "projectPath": "C:\\Users\\Hp\\source\\repos\\Painter\\Painter\\Painter.csproj",
+      "projectPath": "C:\\Users\\Hp\\source\\repos\\Painter\\source\\repos\\Painter\\Painter\\Painter.csproj",
       "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hp\\source\\repos\\Painter\\Painter\\obj\\",
+      "outputPath": "C:\\Users\\Hp\\source\\repos\\Painter\\source\\repos\\Painter\\Painter\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",

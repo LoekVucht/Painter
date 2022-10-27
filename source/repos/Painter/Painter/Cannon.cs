@@ -31,23 +31,6 @@ namespace Painter
             _currentColor = Color.Blue;
         }
 
-        public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
-        {
-            spriteBatch.Draw(_cannonBarrel, _barrelPosition, null, Color.White, Angle, _barrelOrigin, 1.0f, SpriteEffects.None, 0);
-
-            // determine the sprite based on the current color
-            Texture2D currentSprite;
-            if (_currentColor == Color.Red)
-                currentSprite = _colorRed;
-            else if (_currentColor == Color.Green)
-                currentSprite = _colorGreen;
-            else
-                currentSprite = _colorBlue;
-
-            // draw that sprite
-            spriteBatch.Draw(currentSprite, _barrelPosition, null, Color.White, 0f, _colorOrigin, 1.0f, SpriteEffects.None, 0);
-        }
-
         public Color Color
         {
             get { return _currentColor; }
@@ -84,6 +67,23 @@ namespace Painter
             double opposite = inputHelper.MousePosition.Y - Position.Y;
             double adjacent = inputHelper.MousePosition.X - Position.X;
             Angle = (float)Math.Atan2(opposite, adjacent);
+        }
+
+        public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+        {
+            spriteBatch.Draw(_cannonBarrel, _barrelPosition, null, Color.White, Angle, _barrelOrigin, 1.0f, SpriteEffects.None, 0);
+
+            // determine the sprite based on the current color
+            Texture2D currentSprite;
+            if (_currentColor == Color.Red)
+                currentSprite = _colorRed;
+            else if (_currentColor == Color.Green)
+                currentSprite = _colorGreen;
+            else
+                currentSprite = _colorBlue;
+
+            // draw that sprite
+            spriteBatch.Draw(currentSprite, _barrelPosition, null, Color.White, 0f, _colorOrigin, 1.0f, SpriteEffects.None, 0);
         }
     }
 }
