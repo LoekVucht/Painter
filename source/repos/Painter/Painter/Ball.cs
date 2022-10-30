@@ -64,6 +64,18 @@ namespace Painter
             }
         }
 
+        public Color Color { get { return _color; } }
+
+        public Rectangle BoundingBox
+        {
+            get
+            {
+                Rectangle spriteBounds = _colorRed.Bounds;
+                spriteBounds.Offset(_position - _origin);
+                return spriteBounds;
+            }
+        }
+
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             // determine the sprite based on the current color

@@ -66,3 +66,4 @@ C:\Users\Hp\source\repos\Painter\source\repos\Painter\Painter\bin\Debug\net6.0\C
 C:\Users\Hp\source\repos\Painter\source\repos\Painter\Painter\bin\Debug\net6.0\Content\spr_can_blue.xnb
 C:\Users\Hp\source\repos\Painter\source\repos\Painter\Painter\bin\Debug\net6.0\Content\spr_can_green.xnb
 C:\Users\Hp\source\repos\Painter\source\repos\Painter\Painter\bin\Debug\net6.0\Content\spr_can_red.xnb
+C:\Users\Hp\source\repos\Painter\source\repos\Painter\Painter\bin\Debug\net6.0\Content\spr_gameover.xnb

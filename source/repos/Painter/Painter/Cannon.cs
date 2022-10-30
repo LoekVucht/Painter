@@ -6,11 +6,11 @@ using System;
 
 namespace Painter
 {
-    public class Cannon
+    public class Cannon : ThreeColorGameObject
     {
-        private Texture2D _cannonBarrel, _colorRed, _colorGreen, _colorBlue;
-        private Vector2 _barrelPosition, _barrelOrigin, _colorOrigin;
-        private Color _currentColor;
+        private Texture2D _cannonBarrel;
+        private Vector2 _barrelOrigin;
+        private float _barrelRotation;
         public float Angle { get; set; }
 
         public Cannon(ContentManager content)
@@ -27,26 +27,8 @@ namespace Painter
 
         public void Reset()
         {
-            Angle = 0.0f;
+            rotation = 0.0f;
             _currentColor = Color.Blue;
-        }
-
-        public Color Color
-        {
-            get { return _currentColor; }
-            private set
-            {
-                if (value != Color.Red && value != Color.Green && value != Color.Blue)
-                {
-                    throw new ArgumentException();
-                }
-                _currentColor = value;
-            }
-        }
-
-        public Vector2 Position
-        {
-            get { return _barrelPosition; }
         }
 
         public void HandleInput(InputHelper inputHelper)
@@ -66,7 +48,7 @@ namespace Painter
 
             double opposite = inputHelper.MousePosition.Y - Position.Y;
             double adjacent = inputHelper.MousePosition.X - Position.X;
-            Angle = (float)Math.Atan2(opposite, adjacent);
+            rotation = (float)Math.Atan2(opposite, adjacent);
         }
 
         public Vector2 BallPosition

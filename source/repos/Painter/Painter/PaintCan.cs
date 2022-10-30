@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,8 +37,17 @@ namespace Painter
             if (_velocity != Vector2.Zero)
             {
                 _position += _velocity * elapsedFrameTimeInSeconds;
+                if (BoundingBox.Intersects(Painter.GameWorld.Ball.BoundingBox))
+                {
+                    _color = Painter.GameWorld.Ball.Color;
+                    Painter.GameWorld.Ball.Reset();
+                }
                 if (GameWorld.IsOutsideWorld(_position - _origin))
                 {
+                    if (_color != _targetColor)
+                    {
+                        Painter.GameWorld.LoseLife();
+                    }
                     Reset();
                 }
             }
@@ -80,6 +90,15 @@ namespace Painter
             };
         }
 
+        public Rectangle BoundingBox
+        {
+            get
+            {
+                Rectangle spriteBounds = _colorRed.Bounds;
+                spriteBounds.Offset(_position - _origin);
+                return spriteBounds;
+            }
+        }
         public void Reset()
         {
             _color = Color.Blue;
