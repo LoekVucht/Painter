@@ -11,25 +11,26 @@ namespace Painter
 {
     public abstract class ThreeColorGameObject
     {
-        protected Texture2D _colorRed, _colorGreen, _colorBlue;
-        protected Color _color;
-        protected Vector2 _position, _origin, _velocity;
-        protected float rotation;
+        protected Texture2D ColorRed, ColorGreen, ColorBlue;
+        public Color Color { get; set; }
+        public Vector2 Position { get; set; }
+        protected Vector2 Origin, Velocity;
+        protected float Rotation;
 
         public ThreeColorGameObject(ContentManager content, string redSprite, string greenSprite, string blueSprite)
         {
             // load the three sprites
-            _colorRed = content.Load<Texture2D>(redSprite);
-            _colorBlue = content.Load<Texture2D>(blueSprite);
-            _colorGreen = content.Load<Texture2D>(greenSprite);
+            ColorRed = content.Load<Texture2D>(redSprite);
+            ColorBlue = content.Load<Texture2D>(blueSprite);
+            ColorGreen = content.Load<Texture2D>(greenSprite);
 
             // default origin: center of a sprite
-            _origin = new Vector2(_colorRed.Width / 2.0f, _colorRed.Height / 2.0f);
+            Origin = new Vector2(ColorRed.Width / 2.0f, ColorRed.Height / 2.0f);
 
             // initialize other things
             Position = Vector2.Zero;
-            _velocity = Vector2.Zero;
-            rotation = 0;
+            Velocity = Vector2.Zero;
+            Rotation = 0;
 
             Reset();
         }
@@ -38,52 +39,38 @@ namespace Painter
         {
             get
             {
-                Rectangle spriteBounds = _colorRed.Bounds;
-                spriteBounds.Offset(_position - _origin);
+                Rectangle spriteBounds = ColorRed.Bounds;
+                spriteBounds.Offset(Position - Origin);
                 return spriteBounds;
             }
         }
 
-        public Color Color
-        {
-            get { return _color; }
-            set { _color = value; }
-        }
-
-        public Vector2 Position
-        {
-            get { return _position; }
-            set { _position = value; }
-        }
-
-        public void Reset()
+        public virtual void Reset()
         {
             Color = Color.Blue;
         }
 
-        public void HandleInput(InputHelper inputHelper)
+        public abstract void HandleInput(InputHelper inputHelper);
+
+        public virtual void Update(GameTime gameTime)
         {
+            Position += Velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
         }
 
-        public void Update(GameTime gameTime)
-        {
-            Position += _velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
-        }
-
-        public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+        public virtual void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             // determine the sprite based on the current color
             Texture2D currentSprite;
-            if (_color == Color.Red)
-                currentSprite = _colorRed;
-            else if (_color == Color.Green)
-                currentSprite = _colorGreen;
+            if (Color == Color.Red)
+                currentSprite = ColorRed;
+            else if (Color == Color.Green)
+                currentSprite = ColorGreen;
             else
-                currentSprite = _colorBlue;
+                currentSprite = ColorBlue;
 
             // draw that sprite
-            spriteBatch.Draw(currentSprite, _position, null,
-                Color.White, rotation, _origin, 1.0f, SpriteEffects.None, 0);
+            spriteBatch.Draw(currentSprite, Position, null,
+                Color.White, Rotation, Origin, 1.0f, SpriteEffects.None, 0);
         }
     }
 }
